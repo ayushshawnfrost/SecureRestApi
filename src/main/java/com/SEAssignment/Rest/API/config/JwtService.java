@@ -16,13 +16,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 @Service
 public class JwtService {
-//    @Value("${application.security.jwt.secret-key}")
     private String secretKey="f2074aad4203d327ddd6968ffc08cfebbc7017e6392e7dceabbd71b9dc845aa7";
     public String extractUsername(String jwt) {
-        return null;
+        return extractClaim(jwt, Claims::getSubject);
     }
-
-
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);
