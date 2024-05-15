@@ -1,4 +1,4 @@
-# Secured RFest API
+# Secured Rest API
 
 ## Description
 This project is a REST API developed using Spring Boot, Spring Boot Security, and PostgreSQL. It features JWT authentication and CSRF token protection.
